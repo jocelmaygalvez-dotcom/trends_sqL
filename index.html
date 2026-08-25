@@ -1,44 +1,285 @@
-<!-- Include Supabase JS SDK in your <head> -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Assessment</title>
+  <!-- Supabase JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f3f4f6;
+      padding: 20px;
+      margin: 0;
+    }
 
-<!-- Log-in & Summary Box -->
-<div class="summary-box">
-  <h3>Student Log-in & Grade Summary</h3>
+    /* Container Box for Log-in & Grade Summary */
+    .summary-box {
+      border: 2px dashed #1b365d;
+      border-radius: 8px;
+      padding: 24px;
+      background-color: #f8fafc;
+      margin-bottom: 20px;
+    }
 
-  <div class="input-group">
-    <label for="full_name">Full Name:</label>
-    <input type="text" id="full_name" placeholder="Full Name" required>
+    .summary-box h3 {
+      color: #1b365d;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
 
-    <label for="student_lrn">Student ID / LRN:</label>
-    <input type="text" id="student_lrn" placeholder="Student ID / LRN" required>
+    /* Input Grid Layout */
+    .input-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-field label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1b365d;
+    }
+
+    .input-field input {
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      outline: none;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .input-field input:focus {
+      border-color: #1b365d;
+    }
+
+    /* Score Display Card */
+    .score-display {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .score-item span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #6b7280;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .score-item h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1b365d;
+    }
+
+    /* Bottom Button Bar */
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .btn-print {
+      background-color: #5a6578;
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-print:hover {
+      background-color: #4a5464;
+    }
+
+    .btn-submit {
+      background-color: #102a6b;
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: #0b1d4a;
+    }
+
+    .btn-submit:disabled {
+      background-color: #94a3b8;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Student Log-in & Grade Summary -->
+  <div class="summary-box">
+    <h3>Student Log-in & Grade Summary</h3>
+
+    <div class="input-group">
+      <div class="input-field">
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" placeholder="testing negzpoint" required />
+      </div>
+      <div class="input-field">
+        <label for="student_lrn">Student ID / LRN:</label>
+        <input type="text" id="student_lrn" placeholder="1213" required />
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div class="input-field">
+        <label for="grade_section">Grade & Section:</label>
+        <input type="text" id="grade_section" placeholder="12-adams" required />
+      </div>
+      <div class="input-field">
+        <label for="submission_date">Date:</label>
+        <input type="date" id="submission_date" />
+      </div>
+    </div>
+
+    <div class="score-display">
+      <div class="score-item">
+        <span>TOTAL SCORE</span>
+        <h2 id="score-text">-- / 60</h2>
+      </div>
+      <div class="score-item">
+        <span>PERCENTAGE GRADE</span>
+        <h2 id="percentage-text">--%</h2>
+      </div>
+      <div class="score-item">
+        <span>REMARKS</span>
+        <h2 id="remarks-text">--</h2>
+      </div>
+    </div>
   </div>
 
-  <div class="input-group">
-    <label for="grade_section">Grade & Section:</label>
-    <input type="text" id="grade_section" placeholder="12-Adams" required>
-
-    <label for="submission_date">Date:</label>
-    <input type="date" id="submission_date">
+  <!-- Action Buttons -->
+  <div class="button-group">
+    <button type="button" class="btn-print" onclick="window.print()">Print Test</button>
+    <button type="button" id="submit-btn" class="btn-submit">Submit Test & Save</button>
   </div>
 
-  <div class="score-display">
-    <div>
-      <span>TOTAL SCORE</span>
-      <h2 id="score-text">-- / 60</h2>
-    </div>
-    <div>
-      <span>PERCENTAGE GRADE</span>
-      <h2 id="percentage-text">--%</h2>
-    </div>
-    <div>
-      <span>REMARKS</span>
-      <h2 id="remarks-text">--</h2>
-    </div>
-  </div>
-</div>
+  <script>
+    // 1. Initialize Supabase Client (Replace with your keys)
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-<!-- Action Buttons -->
-<div class="button-group">
-  <button type="button" onclick="window.print()" class="btn-print">Print Test</button>
-  <button type="button" id="submit-btn" class="btn-submit">Submit Test & Save</button>
-</div>
+    // Set today's default date in input box
+    document.getElementById('submission_date').valueAsDate = new Date();
+
+    // 2. Define Answer Key (Map question names to correct option letters)
+    const ANSWER_KEY = {
+      q1: 'A',
+      q2: 'B',
+      q3: 'C',
+      q4: 'D',
+      // Add all 60 answer keys here...
+    };
+
+    // 3. Handle Submit Click
+    document.getElementById('submit-btn').addEventListener('click', async () => {
+      const submitBtn = document.getElementById('submit-btn');
+
+      // Read Input Values
+      const fullName = document.getElementById('full_name').value.trim();
+      const studentLrn = document.getElementById('student_lrn').value.trim();
+      const gradeSection = document.getElementById('grade_section').value.trim();
+      const submissionDate = document.getElementById('submission_date').value;
+
+      // Validate Required Fields
+      if (!fullName || !studentLrn || !gradeSection) {
+        alert('Please fill in your Full Name, Student ID/LRN, and Grade & Section before submitting.');
+        return;
+      }
+
+      // Calculate Quiz Score
+      let score = 0;
+      const totalQuestions = 60;
+
+      for (const [qName, correctAnswer] of Object.entries(ANSWER_KEY)) {
+        const selectedOption = document.querySelector(`input[name="${qName}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswer) {
+          score++;
+        }
+      }
+
+      const percentage = parseFloat(((score / totalQuestions) * 100).toFixed(2));
+      const remarks = percentage >= 75 ? 'PASSED' : 'FAILED';
+
+      // Update Summary Cards UI
+      document.getElementById('score-text').textContent = `${score} / ${totalQuestions}`;
+      document.getElementById('percentage-text').textContent = `${percentage}%`;
+      document.getElementById('remarks-text').textContent = remarks;
+
+      // Submit Data to Supabase
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving...';
+
+      try {
+        const { data, error } = await supabaseClient
+          .from('student_results')
+          .insert([
+            {
+              full_name: fullName,
+              student_lrn: studentLrn,
+              grade_section: gradeSection,
+              submission_date: submissionDate,
+              total_score: score,
+              percentage_grade: percentage,
+              remarks: remarks
+            }
+          ]);
+
+        if (error) {
+          throw error;
+        }
+
+        alert('Test submitted and saved successfully!');
+        submitBtn.textContent = 'Submitted';
+
+      } catch (err) {
+        console.error('Supabase Error:', err);
+        alert('Failed to save test: ' + (err.message || 'Unknown error'));
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Test & Save';
+      }
+    });
+  </script>
+</body>
+</html>
