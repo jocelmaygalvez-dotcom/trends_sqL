@@ -1,6 +1,6 @@
 // Initialize Supabase Client
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://imwzmsunzgbxipjdjxji.supabase.co/rest/v1/';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltd3ptc3VuemdieGlwamRqeGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NDQ4NzcsImV4cCI6MjEwMzIyMDg3N30.zFzuIi161XFqxJw35wCWGClpYFznmrUeWzAw2C8kniE';
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Define correct answers key (Update with your question radio names and correct choices)
