@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21st Century Trends, Networks, and Critical Thinking Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Supabase CDN Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>21st Century Trends, Networks, and Critical Thinking</h1>
+        <p style="text-align: center; color: #666; margin: 0;">60-Item Summative Assessment</p>
+    </header>
+
+    <div class="instructions">
+        <h3>Directions:</h3>
+        <p>Read and understand each question. Select the best answer from the choices provided. When finished, fill out your student details at the bottom and submit the form to calculate your final grade.</p>
+    </div>
+
+    <form id="quiz-form">
+        <!-- Section I -->
+        <div class="section-header">I. DEFINITION OF A TREND</div>
+
+        <div class="question-block" id="q1">
+            <div class="question-text">1. What is a trend?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q1" value="A"> A. A temporary event</label>
+                <label class="option-label"><input type="radio" name="q1" value="B"> B. A pattern of change over time</label>
+                <label class="option-label"><input type="radio" name="q1" value="C"> C. A rumor</label>
+                <label class="option-label"><input type="radio" name="q1" value="D"> D. An opinion</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q2">
+            <div class="question-text">2. Which term refers to a repeated or consistent direction of change over time?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q2" value="A"> A. Trend</label>
+                <label class="option-label"><input type="radio" name="q2" value="B"> B. Accident</label>
+                <label class="option-label"><input type="radio" name="q2" value="C"> C. Reaction</label>
+                <label class="option-label"><input type="radio" name="q2" value="D"> D. Occurrence</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q3">
+            <div class="question-text">3. Why is identifying trends important?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q3" value="A"> A. It helps people ignore changes.</label>
+                <label class="option-label"><input type="radio" name="q3" value="B"> B. It helps people make informed decisions.</label>
+                <label class="option-label"><input type="radio" name="q3" value="C"> C. It prevents people from planning.</label>
+                <label class="option-label"><input type="radio" name="q3" value="D"> D. It encourages people to follow rumors.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q4">
+            <div class="question-text">4. Which statement best describes a trend?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q4" value="A"> A. It happens only once.</label>
+                <label class="option-label"><input type="radio" name="q4" value="B"> B. It follows a pattern over time.</label>
+                <label class="option-label"><input type="radio" name="q4" value="C"> C. It is always negative.</label>
+                <label class="option-label"><input type="radio" name="q4" value="D"> D. It never changes.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q5">
+            <div class="question-text">5. A school records the number of students using the library every month for one year. What can the school use the data for?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q5" value="A"> A. Identifying a trend in library use</label>
+                <label class="option-label"><input type="radio" name="q5" value="B"> B. Determining the weather</label>
+                <label class="option-label"><input type="radio" name="q5" value="C"> C. Creating a rumor</label>
+                <label class="option-label"><input type="radio" name="q5" value="D"> D. Measuring students' height</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q6">
+            <div class="question-text">6. A small business notices that customers increasingly purchase products through online platforms. What should the business do based on this trend?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q6" value="A"> A. Stop selling products</label>
+                <label class="option-label"><input type="radio" name="q6" value="B"> B. Develop or improve online services</label>
+                <label class="option-label"><input type="radio" name="q6" value="C"> C. Ignore customer behavior</label>
+                <label class="option-label"><input type="radio" name="q6" value="D"> D. Close its physical store immediately</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q7">
+            <div class="question-text">7. A student records smartphone use among classmates for six months and observes that usage increases every month. What does the evidence indicate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q7" value="A"> A. A one-time event</label>
+                <label class="option-label"><input type="radio" name="q7" value="B"> B. A developing trend</label>
+                <label class="option-label"><input type="radio" name="q7" value="C"> C. A random occurrence</label>
+                <label class="option-label"><input type="radio" name="q7" value="D"> D. An isolated opinion</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q8">
+            <div class="question-text">8. Which is the most reliable basis for deciding whether a trend exists?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q8" value="A"> A. A friend's opinion</label>
+                <label class="option-label"><input type="radio" name="q8" value="B"> B. A single observation</label>
+                <label class="option-label"><input type="radio" name="q8" value="C"> C. Consistent data collected over time</label>
+                <label class="option-label"><input type="radio" name="q8" value="D"> D. A social media rumor</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q9">
+            <div class="question-text">9. A class wants to study changes in students' reading habits. Which plan would best help them identify a trend?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q9" value="A"> A. Ask one student once</label>
+                <label class="option-label"><input type="radio" name="q9" value="B"> B. Collect reading data regularly for several months and compare the results</label>
+                <label class="option-label"><input type="radio" name="q9" value="C"> C. Choose an answer based on opinion</label>
+                <label class="option-label"><input type="radio" name="q9" value="D"> D. Observe students for only one day</label>
+            </div>
+        </div>
+
+        <!-- Section II -->
+        <div class="section-header">II. TRENDS AND PATTERN RECOGNITION</div>
+
+        <div class="question-block" id="q10">
+            <div class="question-text">10. What does pattern recognition mean?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q10" value="A"> A. Identifying repeated or related events</label>
+                <label class="option-label"><input type="radio" name="q10" value="B"> B. Ignoring information</label>
+                <label class="option-label"><input type="radio" name="q10" value="C"> C. Guessing outcomes</label>
+                <label class="option-label"><input type="radio" name="q10" value="D"> D. Copying answers</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q11">
+            <div class="question-text">11. Which tool is commonly used to display data and help identify patterns?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q11" value="A"> A. Graph</label>
+                <label class="option-label"><input type="radio" name="q11" value="B"> B. Rumor</label>
+                <label class="option-label"><input type="radio" name="q11" value="C"> C. Advertisement</label>
+                <label class="option-label"><input type="radio" name="q11" value="D"> D. Fiction story</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q12">
+            <div class="question-text">12. Why is pattern recognition useful?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q12" value="A"> A. It helps people identify relationships and possible outcomes.</label>
+                <label class="option-label"><input type="radio" name="q12" value="B"> B. It prevents people from examining data.</label>
+                <label class="option-label"><input type="radio" name="q12" value="C"> C. It replaces observation with guessing.</label>
+                <label class="option-label"><input type="radio" name="q12" value="D"> D. It makes data unnecessary.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q13">
+            <div class="question-text">13. Which situation best represents a pattern?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q13" value="A"> A. A student is absent once.</label>
+                <label class="option-label"><input type="radio" name="q13" value="B"> B. Sales increase during the same season every year.</label>
+                <label class="option-label"><input type="radio" name="q13" value="C"> C. A store closes unexpectedly one day.</label>
+                <label class="option-label"><input type="radio" name="q13" value="D"> D. A person changes plans once.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q14">
+            <div class="question-text">14. A store records its monthly sales and notices that sales increase every December. What should the manager recognize?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q14" value="A"> A. A seasonal pattern</label>
+                <label class="option-label"><input type="radio" name="q14" value="B"> B. A random accident</label>
+                <label class="option-label"><input type="radio" name="q14" value="C"> C. An isolated event</label>
+                <label class="option-label"><input type="radio" name="q14" value="D"> D. An unrelated occurrence</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q15">
+            <div class="question-text">15. A student plots monthly rainfall data on a graph. What should the student examine to recognize a pattern?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q15" value="A"> A. Changes and repetitions in the data</label>
+                <label class="option-label"><input type="radio" name="q15" value="B"> B. The color of the paper</label>
+                <label class="option-label"><input type="radio" name="q15" value="C"> C. The names of classmates</label>
+                <label class="option-label"><input type="radio" name="q15" value="D"> D. Personal opinions</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q16">
+            <div class="question-text">16. A company's sales data are: January – 100, February – 120, March – 140, April – 160. What pattern is most evident?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q16" value="A"> A. Sales are consistently decreasing.</label>
+                <label class="option-label"><input type="radio" name="q16" value="B"> B. Sales are consistently increasing.</label>
+                <label class="option-label"><input type="radio" name="q16" value="C"> C. Sales remain unchanged.</label>
+                <label class="option-label"><input type="radio" name="q16" value="D"> D. Sales change randomly.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q17">
+            <div class="question-text">17. Which situation shows a pattern rather than a single occurrence?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q17" value="A"> A. One student arriving late</label>
+                <label class="option-label"><input type="radio" name="q17" value="B"> B. One computer breaking down</label>
+                <label class="option-label"><input type="radio" name="q17" value="C"> C. Students repeatedly using the internet after school</label>
+                <label class="option-label"><input type="radio" name="q17" value="D"> D. One canceled class</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q18">
+            <div class="question-text">18. Which evidence would provide the strongest basis for claiming that a community is experiencing an increase in internet use?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q18" value="A"> A. One person's observation</label>
+                <label class="option-label"><input type="radio" name="q18" value="B"> B. A social media comment</label>
+                <label class="option-label"><input type="radio" name="q18" value="C"> C. Internet-use records collected and compared over several years</label>
+                <label class="option-label"><input type="radio" name="q18" value="D"> D. A prediction from a friend</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q19">
+            <div class="question-text">19. A researcher wants to identify a trend in student attendance. Which approach is most appropriate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q19" value="A"> A. Collect attendance data, organize it in a graph, and compare changes over time.</label>
+                <label class="option-label"><input type="radio" name="q19" value="B"> B. Ask one student about attendance.</label>
+                <label class="option-label"><input type="radio" name="q19" value="C"> C. Use only personal opinions.</label>
+                <label class="option-label"><input type="radio" name="q19" value="D"> D. Select data that supports a preferred conclusion.</label>
+            </div>
+        </div>
+
+        <!-- Section III -->
+        <div class="section-header">III. UNDERSTANDING LOCAL NETWORKS</div>
+
+        <div class="question-block" id="q20">
+            <div class="question-text">20. What is a local network?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q20" value="A"> A. Connected individuals or groups within a community</label>
+                <label class="option-label"><input type="radio" name="q20" value="B"> B. A single person</label>
+                <label class="option-label"><input type="radio" name="q20" value="C"> C. A continent</label>
+                <label class="option-label"><input type="radio" name="q20" value="D"> D. An international organization</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q21">
+            <div class="question-text">21. Which is an example of a local network?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q21" value="A"> A. Neighborhood association</label>
+                <label class="option-label"><input type="radio" name="q21" value="B"> B. United Nations</label>
+                <label class="option-label"><input type="radio" name="q21" value="C"> C. World Bank</label>
+                <label class="option-label"><input type="radio" name="q21" value="D"> D. ASEAN</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q22">
+            <div class="question-text">22. Why are local networks important to communities?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q22" value="A"> A. They encourage cooperation and communication.</label>
+                <label class="option-label"><input type="radio" name="q22" value="B"> B. They isolate individuals.</label>
+                <label class="option-label"><input type="radio" name="q22" value="C"> C. They prevent information sharing.</label>
+                <label class="option-label"><input type="radio" name="q22" value="D"> D. They increase separation.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q23">
+            <div class="question-text">23. Why can a school be considered part of a local network?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q23" value="A"> A. It connects students, teachers, parents, and community members.</label>
+                <label class="option-label"><input type="radio" name="q23" value="B"> B. It functions as a country.</label>
+                <label class="option-label"><input type="radio" name="q23" value="C"> C. It controls international trade.</label>
+                <label class="option-label"><input type="radio" name="q23" value="D"> D. It represents a continent.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q24">
+            <div class="question-text">24. After a flood, residents organize a group to share food, information, and transportation. What does this situation demonstrate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q24" value="A"> A. A local network supporting community cooperation</label>
+                <label class="option-label"><input type="radio" name="q24" value="B"> B. Global migration</label>
+                <label class="option-label"><input type="radio" name="q24" value="C"> C. International trade</label>
+                <label class="option-label"><input type="radio" name="q24" value="D"> D. Planetary networking</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q25">
+            <div class="question-text">25. A community has several organizations that communicate and work together during emergencies. What does this suggest about the community?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q25" value="A"> A. Its local networks are interconnected.</label>
+                <label class="option-label"><input type="radio" name="q25" value="B"> B. Its members are isolated.</label>
+                <label class="option-label"><input type="radio" name="q25" value="C"> C. Its communication is completely absent.</label>
+                <label class="option-label"><input type="radio" name="q25" value="D"> D. Its organizations have no common purpose.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q26">
+            <div class="question-text">26. Which local network would most effectively help address a community problem involving students' learning needs?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q26" value="A"> A. A group that includes schools, parents, learners, and community organizations</label>
+                <label class="option-label"><input type="radio" name="q26" value="B"> B. A group with only one member</label>
+                <label class="option-label"><input type="radio" name="q26" value="C"> C. A group that refuses to communicate</label>
+                <label class="option-label"><input type="radio" name="q26" value="D"> D. A group that excludes schools and families</label>
+            </div>
+        </div>
+
+        <!-- Section IV -->
+        <div class="section-header">IV. STRATEGIC AND INTUITIVE THINKING</div>
+
+        <div class="question-block" id="q27">
+            <div class="question-text">27. What does strategic thinking involve?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q27" value="A"> A. Planning ahead</label>
+                <label class="option-label"><input type="radio" name="q27" value="B"> B. Guessing randomly</label>
+                <label class="option-label"><input type="radio" name="q27" value="C"> C. Ignoring goals</label>
+                <label class="option-label"><input type="radio" name="q27" value="D"> D. Avoiding decisions</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q28">
+            <div class="question-text">28. Intuitive thinking commonly relies on:</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q28" value="A"> A. Instinct and experience</label>
+                <label class="option-label"><input type="radio" name="q28" value="B"> B. Calculators only</label>
+                <label class="option-label"><input type="radio" name="q28" value="C"> C. Books only</label>
+                <label class="option-label"><input type="radio" name="q28" value="D"> D. Luck only</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q29">
+            <div class="question-text">29. Why is strategic thinking important?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q29" value="A"> A. It helps people plan actions toward goals.</label>
+                <label class="option-label"><input type="radio" name="q29" value="B"> B. It prevents people from making plans.</label>
+                <label class="option-label"><input type="radio" name="q29" value="C"> C. It encourages random decisions.</label>
+                <label class="option-label"><input type="radio" name="q29" value="D"> D. It eliminates the need for goals.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q30">
+            <div class="question-text">30. How is intuitive thinking different from purely random guessing?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q30" value="A"> A. Intuition can be influenced by experience and learned patterns.</label>
+                <label class="option-label"><input type="radio" name="q30" value="B"> B. Intuition never uses experience.</label>
+                <label class="option-label"><input type="radio" name="q30" value="C"> C. Intuition always ignores available information.</label>
+                <label class="option-label"><input type="radio" name="q30" value="D"> D. Intuition is based entirely on chance.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q31">
+            <div class="question-text">31. A student creates a study schedule several weeks before an examination. What type of thinking is demonstrated?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q31" value="A"> A. Strategic thinking</label>
+                <label class="option-label"><input type="radio" name="q31" value="B"> B. Random thinking</label>
+                <label class="option-label"><input type="radio" name="q31" value="C"> C. Passive thinking</label>
+                <label class="option-label"><input type="radio" name="q31" value="D"> D. Impulsive thinking</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q32">
+            <div class="question-text">32. A teacher quickly chooses a familiar classroom strategy because previous experience shows that it works with a similar situation. What type of thinking is being used?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q32" value="A"> A. Intuitive thinking</label>
+                <label class="option-label"><input type="radio" name="q32" value="B"> B. Random guessing</label>
+                <label class="option-label"><input type="radio" name="q32" value="C"> C. Avoidance</label>
+                <label class="option-label"><input type="radio" name="q32" value="D"> D. Long-term planning only</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q33">
+            <div class="question-text">33. A student must choose between two projects. The student compares the time required, available resources, possible results, and risks before deciding. What does this behavior demonstrate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q33" value="A"> A. Strategic analysis</label>
+                <label class="option-label"><input type="radio" name="q33" value="B"> B. Random decision-making</label>
+                <label class="option-label"><input type="radio" name="q33" value="C"> C. Pure intuition</label>
+                <label class="option-label"><input type="radio" name="q33" value="D"> D. Avoidance of responsibility</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q34">
+            <div class="question-text">34. Before making a major decision, which approach is most appropriate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q34" value="A"> A. Evaluate possible outcomes and available evidence.</label>
+                <label class="option-label"><input type="radio" name="q34" value="B"> B. Follow rumors immediately.</label>
+                <label class="option-label"><input type="radio" name="q34" value="C"> C. Ignore possible consequences.</label>
+                <label class="option-label"><input type="radio" name="q34" value="D"> D. Choose randomly.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q35">
+            <div class="question-text">35. A student wants to improve academic performance. Which plan best combines strategic and intuitive thinking?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q35" value="A"> A. Create a study schedule, monitor progress, and adjust strategies using both evidence and experience.</label>
+                <label class="option-label"><input type="radio" name="q35" value="B"> B. Study only when motivated.</label>
+                <label class="option-label"><input type="radio" name="q35" value="C"> C. Copy another student's schedule without considering personal needs.</label>
+                <label class="option-label"><input type="radio" name="q35" value="D"> D. Make decisions without reviewing results.</label>
+            </div>
+        </div>
+
+        <!-- Section V -->
+        <div class="section-header">V. GLOBAL NETWORKS: LABOR AND MIGRATION</div>
+
+        <div class="question-block" id="q36">
+            <div class="question-text">36. What does labor migration refer to?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q36" value="A"> A. Movement of workers from one place to another for employment</label>
+                <label class="option-label"><input type="radio" name="q36" value="B"> B. Travel for vacation only</label>
+                <label class="option-label"><input type="radio" name="q36" value="C"> C. Online learning</label>
+                <label class="option-label"><input type="radio" name="q36" value="D"> D. Shopping activities</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q37">
+            <div class="question-text">37. What is one major reason people migrate for work?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q37" value="A"> A. Employment opportunities</label>
+                <label class="option-label"><input type="radio" name="q37" value="B"> B. Entertainment only</label>
+                <label class="option-label"><input type="radio" name="q37" value="C"> C. Fashion</label>
+                <label class="option-label"><input type="radio" name="q37" value="D"> D. Random curiosity</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q38">
+            <div class="question-text">38. How do overseas workers contribute to their home communities?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q38" value="A"> A. Through remittances and other forms of support</label>
+                <label class="option-label"><input type="radio" name="q38" value="B"> B. By increasing isolation</label>
+                <label class="option-label"><input type="radio" name="q38" value="C"> C. By stopping communication</label>
+                <label class="option-label"><input type="radio" name="q38" value="D"> D. By eliminating economic activity</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q39">
+            <div class="question-text">39. How can migration affect societies?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q39" value="A"> A. It can promote economic and cultural exchange.</label>
+                <label class="option-label"><input type="radio" name="q39" value="B"> B. It has no effect on communities.</label>
+                <label class="option-label"><input type="radio" name="q39" value="C"> C. It affects weather only.</label>
+                <label class="option-label"><input type="radio" name="q39" value="D"> D. It always decreases communication.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q40">
+            <div class="question-text">40. A Filipino worker moves to another country to obtain a job and sends part of the income home to the family. What concept does this situation illustrate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q40" value="A"> A. Labor migration and remittance</label>
+                <label class="option-label"><input type="radio" name="q40" value="B"> B. Local networking only</label>
+                <label class="option-label"><input type="radio" name="q40" value="C"> C. Climate migration only</label>
+                <label class="option-label"><input type="radio" name="q40" value="D"> D. Tourism</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q41">
+            <div class="question-text">41. A company recruits skilled workers from several countries to fill specialized positions. What does this demonstrate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q41" value="A"> A. A global labor network</label>
+                <label class="option-label"><input type="radio" name="q41" value="B"> B. Community isolation</label>
+                <label class="option-label"><input type="radio" name="q41" value="C"> C. Local networking only</label>
+                <label class="option-label"><input type="radio" name="q41" value="D"> D. Elimination of migration</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q42">
+            <div class="question-text">42. A community receives substantial remittances from workers abroad. Families use the money for education, housing, and daily needs. What can be inferred?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q42" value="A"> A. Labor migration can have economic effects on families and communities.</label>
+                <label class="option-label"><input type="radio" name="q42" value="B"> B. Migration has no economic connection to communities.</label>
+                <label class="option-label"><input type="radio" name="q42" value="C"> C. Remittances prevent families from accessing education.</label>
+                <label class="option-label"><input type="radio" name="q42" value="D"> D. Global labor networks eliminate local economies.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q43">
+            <div class="question-text">43. Which measure would best protect migrant workers while supporting labor mobility?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q43" value="A"> A. Providing information about contracts, legal rights, and available support services</label>
+                <label class="option-label"><input type="radio" name="q43" value="B"> B. Preventing workers from learning their rights</label>
+                <label class="option-label"><input type="radio" name="q43" value="C"> C. Allowing recruitment without any regulations</label>
+                <label class="option-label"><input type="radio" name="q43" value="D"> D. Discouraging all international employment</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q44">
+            <div class="question-text">44. Which proposal would best strengthen support for migrant workers?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q44" value="A"> A. Develop a coordinated program providing pre-departure orientation, legal information, communication support, and assistance during employment.</label>
+                <label class="option-label"><input type="radio" name="q44" value="B"> B. Provide no information before departure.</label>
+                <label class="option-label"><input type="radio" name="q44" value="C"> C. Limit communication between workers and their families.</label>
+                <label class="option-label"><input type="radio" name="q44" value="D"> D. Remove all support services.</label>
+            </div>
+        </div>
+
+        <!-- Section VI -->
+        <div class="section-header">VI. GLOBAL NETWORKS APPLICATIONS</div>
+
+        <div class="question-block" id="q45">
+            <div class="question-text">45. What is an example of a global network application?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q45" value="A"> A. Social media</label>
+                <label class="option-label"><input type="radio" name="q45" value="B"> B. Chalkboard</label>
+                <label class="option-label"><input type="radio" name="q45" value="C"> C. Notebook</label>
+                <label class="option-label"><input type="radio" name="q45" value="D"> D. Poster</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q46">
+            <div class="question-text">46. The internet is best described as a:</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q46" value="A"> A. Global network</label>
+                <label class="option-label"><input type="radio" name="q46" value="B"> B. Local event</label>
+                <label class="option-label"><input type="radio" name="q46" value="C"> C. Single trend</label>
+                <label class="option-label"><input type="radio" name="q46" value="D"> D. School activity</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q47">
+            <div class="question-text">47. How do global networks benefit communication?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q47" value="A"> A. They allow people in different locations to exchange information quickly.</label>
+                <label class="option-label"><input type="radio" name="q47" value="B"> B. They prevent communication between countries.</label>
+                <label class="option-label"><input type="radio" name="q47" value="C"> C. They increase physical distance.</label>
+                <label class="option-label"><input type="radio" name="q47" value="D"> D. They eliminate access to information.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q48">
+            <div class="question-text">48. Why do businesses use global networks?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q48" value="A"> A. To communicate with and reach customers in different locations</label>
+                <label class="option-label"><input type="radio" name="q48" value="B"> B. To avoid communication</label>
+                <label class="option-label"><input type="radio" name="q48" value="C"> C. To stop advertising</label>
+                <label class="option-label"><input type="radio" name="q48" value="D"> D. To eliminate customers</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q49">
+            <div class="question-text">49. A teacher conducts an online class with students who are temporarily in different countries. What global network application is being used?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q49" value="A"> A. Video conferencing</label>
+                <label class="option-label"><input type="radio" name="q49" value="B"> B. Printed poster</label>
+                <label class="option-label"><input type="radio" name="q49" value="C"> C. Bulletin board</label>
+                <label class="option-label"><input type="radio" name="q49" value="D"> D. Face-to-face meeting only</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q50">
+            <div class="question-text">50. A local business uses an online platform to sell products to customers in other countries. What does this demonstrate?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q50" value="A"> A. Application of global networks in business</label>
+                <label class="option-label"><input type="radio" name="q50" value="B"> B. Local isolation</label>
+                <label class="option-label"><input type="radio" name="q50" value="C"> C. Elimination of communication</label>
+                <label class="option-label"><input type="radio" name="q50" value="D"> D. Reduction of connectivity</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q51">
+            <div class="question-text">51. A company uses email, video conferencing, cloud platforms, and social media to coordinate employees in several countries. What does this situation show?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q51" value="A"> A. Global networks support multiple forms of international communication.</label>
+                <label class="option-label"><input type="radio" name="q51" value="B"> B. Technology prevents global cooperation.</label>
+                <label class="option-label"><input type="radio" name="q51" value="C"> C. Global networks work only for entertainment.</label>
+                <label class="option-label"><input type="radio" name="q51" value="D"> D. Communication is limited to local communities.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q52">
+            <div class="question-text">52. Which is the most important consideration when using a global digital platform for sharing information?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q52" value="A"> A. Verify information and protect personal data.</label>
+                <label class="option-label"><input type="radio" name="q52" value="B"> B. Share all information without checking it.</label>
+                <label class="option-label"><input type="radio" name="q52" value="C"> C. Accept every online claim as true.</label>
+                <label class="option-label"><input type="radio" name="q52" value="D"> D. Ignore privacy and security concerns.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q53">
+            <div class="question-text">53. A school wants to connect learners with educational resources and experts from other countries. Which plan would best use global networks?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q53" value="A"> A. Establish a secure online learning platform with virtual collaboration, resource sharing, and international communication.</label>
+                <label class="option-label"><input type="radio" name="q53" value="B"> B. Limit students to printed materials only.</label>
+                <label class="option-label"><input type="radio" name="q53" value="C"> C. Prevent online communication.</label>
+                <label class="option-label"><input type="radio" name="q53" value="D"> D. Allow students to use any website without guidance or safeguards.</label>
+            </div>
+        </div>
+
+        <!-- Section VII -->
+        <div class="section-header">VII. PLANETARY NETWORKS: CLIMATE CHANGE</div>
+
+        <div class="question-block" id="q54">
+            <div class="question-text">54. What does climate change refer to?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q54" value="A"> A. Long-term changes in climate patterns</label>
+                <label class="option-label"><input type="radio" name="q54" value="B"> B. Daily weather only</label>
+                <label class="option-label"><input type="radio" name="q54" value="C"> C. Wind direction for one day</label>
+                <label class="option-label"><input type="radio" name="q54" value="D"> D. One-day rainfall</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q55">
+            <div class="question-text">55. Which greenhouse gas contributes significantly to climate change?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q55" value="A"> A. Carbon dioxide</label>
+                <label class="option-label"><input type="radio" name="q55" value="B"> B. Oxygen</label>
+                <label class="option-label"><input type="radio" name="q55" value="C"> C. Nitrogen</label>
+                <label class="option-label"><input type="radio" name="q55" value="D"> D. Helium</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q56">
+            <div class="question-text">56. Why is global cooperation important in addressing climate change?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q56" value="A"> A. Climate-related effects cross national boundaries and require collective action.</label>
+                <label class="option-label"><input type="radio" name="q56" value="B"> B. Climate change affects only one community.</label>
+                <label class="option-label"><input type="radio" name="q56" value="C"> C. Countries have no influence on the environment.</label>
+                <label class="option-label"><input type="radio" name="q56" value="D"> D. Environmental problems cannot be addressed through cooperation.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q57">
+            <div class="question-text">57. Which activity can help reduce greenhouse gas emissions?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q57" value="A"> A. Conserving energy</label>
+                <label class="option-label"><input type="radio" name="q57" value="B"> B. Burning more fossil fuels</label>
+                <label class="option-label"><input type="radio" name="q57" value="C"> C. Wasting electricity</label>
+                <label class="option-label"><input type="radio" name="q57" value="D"> D. Increasing unnecessary fuel consumption</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q58">
+            <div class="question-text">58. A coastal community experiences increasingly frequent flooding and rising sea levels over several decades. What relationship can be identified?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q58" value="A"> A. Long-term environmental changes may increase risks to coastal communities.</label>
+                <label class="option-label"><input type="radio" name="q58" value="B"> B. The events are necessarily unrelated to climate conditions.</label>
+                <label class="option-label"><input type="radio" name="q58" value="C"> C. Short-term weather explains every long-term climate pattern.</label>
+                <label class="option-label"><input type="radio" name="q58" value="D"> D. Sea levels have no relationship to environmental change.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q59">
+            <div class="question-text">59. Which action would be the most effective community response to climate change?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q59" value="A"> A. Combine emission-reduction programs with climate adaptation and community preparedness.</label>
+                <label class="option-label"><input type="radio" name="q59" value="B"> B. Depend only on individual actions.</label>
+                <label class="option-label"><input type="radio" name="q59" value="C"> C. Ignore scientific information.</label>
+                <label class="option-label"><input type="radio" name="q59" value="D"> D. Wait until environmental impacts become severe before planning.</label>
+            </div>
+        </div>
+
+        <div class="question-block" id="q60">
+            <div class="question-text">60. Which proposed school program best demonstrates a comprehensive response to climate change?</div>
+            <div class="options-group">
+                <label class="option-label"><input type="radio" name="q60" value="A"> A. A program combining energy conservation, waste reduction, tree planting, climate education, and disaster preparedness</label>
+                <label class="option-label"><input type="radio" name="q60" value="B"> B. A program focused only on decorating classrooms</label>
+                <label class="option-label"><input type="radio" name="q60" value="C"> C. A program that increases unnecessary electricity use</label>
+                <label class="option-label"><input type="radio" name="q60" value="D"> D. A program that discourages environmental education</label>
+            </div>
+        </div>
+
+        <!-- Student Details -->
+        <div class="student-info-block">
+            <h3>Student Log-in & Grade Summary</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="student-name">Full Name:</label>
+                    <input type="text" id="student-name" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-id">Student ID / LRN:</label>
+                    <input type="text" id="student-id" placeholder="Enter ID number">
+                </div>
+                <div class="form-group">
+                    <label for="student-section">Grade & Section:</label>
+                    <input type="text" id="student-section" placeholder="e.g., 12 - STEM A">
+                </div>
+                <div class="form-group">
+                    <label for="test-date">Date:</label>
+                    <input type="date" id="test-date">
+                </div>
+            </div>
+
+            <div class="results-box">
+                <div class="result-item">
+                    <span class="label">Total Score</span>
+                    <span class="value" id="score-val">-- / 60</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Percentage Grade</span>
+                    <span class="value" id="grade-val">--%</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Remarks</span>
+                    <span class="value" id="remarks-val">--</span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="controls">
+        <button type="button" class="btn btn-secondary" onclick="window.print()">Print Test</button>
+        <button type="button" class="btn" id="submit-btn" onclick="submitQuiz()">Submit Test & Save</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
