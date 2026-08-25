@@ -1,37 +1,45 @@
-// Initialize Supabase Client
-const SUPABASE_URL = 'https://imwzmsunzgbxipjdjxji.supabase.co/rest/v1/';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltd3ptc3VuemdieGlwamRqeGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NDQ4NzcsImV4cCI6MjEwMzIyMDg3N30.zFzuIi161XFqxJw35wCWGClpYFznmrUeWzAw2C8kniE';
+// 1. Initialize Supabase Client (Replace with your keys from Supabase Dashboard)
+const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Define correct answers key (Update with your question radio names and correct choices)
+// Set today's date automatically in the input box
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('submission_date').valueAsDate = new Date();
+});
+
+// 2. Define Answer Key (Map question names to correct option letters)
 const ANSWER_KEY = {
   q1: 'A',
   q2: 'B',
-  // Add all 60 question keys here (e.g., q3: 'C', q4: 'D', ...)
+  q3: 'C',
+  q4: 'D',
+  // Add all your remaining question keys here (e.g., q5: 'A', ...)
 };
 
+// 3. Handle Submit Button Click
 document.getElementById('submit-btn').addEventListener('click', async () => {
   const submitBtn = document.getElementById('submit-btn');
 
-  // 1. Gather Input Values
+  // Gather Input Values
   const fullName = document.getElementById('full_name').value.trim();
   const studentLrn = document.getElementById('student_lrn').value.trim();
   const gradeSection = document.getElementById('grade_section').value.trim();
-  const dateVal = document.getElementById('submission_date').value || new Date().toISOString().split('T')[0];
+  const submissionDate = document.getElementById('submission_date').value;
 
-  // Validate Student Info
+  // Validate Required Fields
   if (!fullName || !studentLrn || !gradeSection) {
-    alert('Please complete all student login details before submitting.');
+    alert('Please fill in your Full Name, Student ID/LRN, and Grade & Section before submitting.');
     return;
   }
 
-  // 2. Calculate Quiz Score
+  // Calculate Score
   let score = 0;
-  const totalQuestions = Object.keys(ANSWER_KEY).length || 60;
+  const totalQuestions = 60;
 
   for (const [qName, correctAnswer] of Object.entries(ANSWER_KEY)) {
-    const selected = document.querySelector(`input[name="${qName}"]:checked`);
-    if (selected && selected.value === correctAnswer) {
+    const selectedOption = document.querySelector(`input[name="${qName}"]:checked`);
+    if (selectedOption && selectedOption.value === correctAnswer) {
       score++;
     }
   }
@@ -39,36 +47,39 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
   const percentage = parseFloat(((score / totalQuestions) * 100).toFixed(2));
   const remarks = percentage >= 75 ? 'PASSED' : 'FAILED';
 
-  // 3. Update UI UI Summary
+  // Update Summary UI Display
   document.getElementById('score-text').textContent = `${score} / ${totalQuestions}`;
   document.getElementById('percentage-text').textContent = `${percentage}%`;
   document.getElementById('remarks-text').textContent = remarks;
 
-  // 4. Send Data to Supabase
+  // Submit to Supabase Database
   submitBtn.disabled = true;
   submitBtn.textContent = 'Saving...';
 
-  const { data, error } = await supabaseClient
-    .from('student_results')
-    .insert([
-      {
-        full_name: fullName,
-        student_lrn: studentLrn,
-        grade_section: gradeSection,
-        submission_date: dateVal,
-        total_score: score,
-        percentage_grade: percentage,
-        remarks: remarks
-      }
-    ]);
+  try {
+    const { data, error } = await supabaseClient
+      .from('student_results')
+      .insert([
+        {
+          full_name: fullName,
+          student_lrn: studentLrn,
+          grade_section: gradeSection,
+          submission_date: submissionDate,
+          total_score: score,
+          percentage_grade: percentage,
+          remarks: remarks
+        }
+      ]);
 
-  if (error) {
-    console.error('Supabase Error:', error);
-    alert('Failed to save submission: ' + error.message);
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Test & Save';
-  } else {
+    if (error) throw error;
+
     alert('Test submitted and saved successfully!');
     submitBtn.textContent = 'Submitted';
+
+  } catch (err) {
+    console.error('Supabase Error:', err);
+    alert('Failed to save test: ' + (err.message || 'Unknown error'));
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Test & Save';
   }
 });
